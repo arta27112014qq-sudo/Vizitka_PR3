@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Vizitca</string>
+
+    <string name="full_name">Ли Чжаю Юй</string>
+    <string name="title">Спец Агент Ми6</string>
+
+    <string name="phone">+00 (00) 000 000</string>
+    <string name="social">socialmediahandle</string>
+    <string name="email">email@domain.com</string>
+
+    <string name="photo_desc">Фото профиля</string>
 </resources>

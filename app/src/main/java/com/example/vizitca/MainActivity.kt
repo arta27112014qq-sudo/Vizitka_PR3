@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.shape.CircleShape
-
+import androidx.compose.ui.res.stringResource
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,22 +32,20 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard() {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(24.dp)
     ) {
 
-
         Column(
+            modifier = Modifier.align(Alignment.Center),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
             Image(
                 painter = painterResource(id = R.drawable.profile),
-                contentDescription = "Фото",
+                contentDescription = stringResource(R.string.photo_desc),
                 modifier = Modifier
                     .size(120.dp)
                     .clip(CircleShape),
@@ -57,29 +55,41 @@ fun BusinessCard() {
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Ли Чжаю Юй",
+                text = stringResource(R.string.full_name),
                 fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
             )
 
             Text(
-                text = "Спец Агент Ми6",
+                text = stringResource(R.string.title),
                 fontSize = 16.sp,
                 color = Color.Gray,
                 textAlign = TextAlign.Center
             )
         }
 
-        // 🔽 Контакты (как на скрине)
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            ContactItem(R.drawable.ic_phone, "+00 (00) 000 000")
-            ContactItem(R.drawable.ic_social, "@socialmediahandle")
-            ContactItem(R.drawable.ic_email, "email@domain.com")
+            ContactItem(
+                R.drawable.ic_phone,
+                stringResource(R.string.phone)
+            )
+
+            ContactItem(
+                R.drawable.ic_social,
+                stringResource(R.string.social)
+            )
+
+            ContactItem(
+                R.drawable.ic_email,
+                stringResource(R.string.email)
+            )
         }
     }
 }
