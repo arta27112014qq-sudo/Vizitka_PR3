@@ -72,8 +72,9 @@ fun BusinessCard() {
         Column(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxWidth()
+                .padding(horizontal = 80.dp),
+            horizontalAlignment = Alignment.Start
         ) {
 
             ContactItem(
